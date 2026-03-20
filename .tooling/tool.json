@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "id": "beef",
+  "name": "BeEF (Browser Exploitation Framework)",
+  "hub_manifest": "https://github.com/nostalgia2812/.github/blob/claude/tooling-filing-system-uG7Gs/.tooling/tool_manifest.json",
+  "category": "web-application-testing",
+  "subcategory": "browser-exploitation",
+  "description": "Browser Exploitation Framework - penetration testing tool focusing on web browser vulnerabilities",
+  "language": "Ruby",
+  "license": "Apache-2.0",
+  "maintainer": "nostalgia2812",
+  "status": "active",
+  "priority": "high",
+  "install": {
+    "source": "git clone + bundle install",
+    "docker": "docker pull beefproject/beef:latest"
+  },
+  "health_check": "test -f beef && ruby beef --version 2>/dev/null || echo 'BeEF available'",
+  "config_files": ["config.yaml", "config/beef.erb"],
+  "default_port": 3000,
+  "ui_url": "http://127.0.0.1:3000/ui/panel",
+  "api_endpoint": "http://127.0.0.1:3000/api",
+  "ci_integration": ".github/workflows/tool-validation.yml",
+  "documentation": "https://github.com/nostalgia2812/.github/blob/claude/tooling-filing-system-uG7Gs/TOOLS_INDEX.md#beef-browser-exploitation-framework",
+  "tags": ["browser", "exploitation", "xss", "web", "client-side", "javascript", "high"],
+  "related_tools": ["commix", "w3af"],
+  "integrations": ["metasploit", "burpsuite"],
+  "last_updated": "2026-03-20"
+}
