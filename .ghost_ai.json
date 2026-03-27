@@ -1,0 +1,21 @@
+{
+  "tool": "beef",
+  "ghost_ai_version": "1.0.0",
+  "category": "Browser Exploitation",
+  "description": "Browser Exploitation Framework — client-side security testing, XSS pivot, phishing simulation",
+  "invocation": {
+    "start": "./beef",
+    "hook_url": "http://<beef_host>:3000/hook.js",
+    "api_base": "http://<beef_host>:3000/api",
+    "api_token": "Set in config/config.yaml"
+  },
+  "ghost_ai_integration": {
+    "description": "Ghost AI can query the BeEF REST API to list hooked browsers, execute modules, and retrieve results",
+    "endpoints": {
+      "list_hooks": "GET /api/hooks",
+      "run_module": "POST /api/modules/{hook_id}/{module_id}",
+      "get_result":  "GET /api/modules/{hook_id}/{mod_id}/{event_id}"
+    }
+  },
+  "authorization_note": "Only use against browsers/users you own or have explicit written authorization to test."
+}
